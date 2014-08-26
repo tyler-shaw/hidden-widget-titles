@@ -10,8 +10,10 @@
 add_filter('widget_title', function($title) {
 	
 	$title_check = trim($title);
+	$start_character = apply_filters('hwt_section_start_character', '[');
+	$end_character = apply_filters('hwt_section_end_character', ']');
 	
-	if($title_check[0] == '[' && $title_check[strlen($title_check) - 1] == ']') {
+	if($title_check[0] == $start_character && $title_check[strlen($title_check) - 1] == $end_character) {
 		$title = '';
 		return $title;
 	}
