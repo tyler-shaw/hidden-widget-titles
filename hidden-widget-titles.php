@@ -9,7 +9,10 @@
 // Anonymous function requiring PHP 5.3 or greater.
 add_filter('widget_title', function($title) {
 	
+	// Note: Check what version of PHP made $my_string[0] work.
+	
 	$title_check = trim($title);
+	
 	$start_character = apply_filters('hwt_section_start_character', '[');
 	$end_character = apply_filters('hwt_section_end_character', ']');
 	
@@ -17,8 +20,14 @@ add_filter('widget_title', function($title) {
 		$title = '';
 		return $title;
 	}
-	else {
+	
+	$single_start_character = apply_filters('hwt_single_start_character', '!');
+	
+	if($title_check[0] == $single_start_character) {
+		$title = '';
 		return $title;
 	}
+	
+	return $title;
 	
 });
