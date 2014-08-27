@@ -13,14 +13,6 @@ add_filter('widget_title', function($title) {
 	
 	$title_check = trim($title);
 	
-	$start_character = apply_filters('hwt_section_start_character', '[');
-	$end_character = apply_filters('hwt_section_end_character', ']');
-	
-	if($title_check[0] == $start_character && $title_check[strlen($title_check) - 1] == $end_character) {
-		$title = '';
-		return $title;
-	}
-	
 	$single_start_character = apply_filters('hwt_single_start_character', '!');
 	
 	if($title_check[0] == $single_start_character) {
@@ -28,6 +20,26 @@ add_filter('widget_title', function($title) {
 		return $title;
 	}
 	
-	return $title;
+	$start_char = apply_filters('hwt_section_start_character', '[');
+	$end_char= apply_filters('hwt_section_end_character', ']');
+	
+	while(true) {
+		$start_p = strpos($title_check, $start_char);
+		$end_p = strpos($title_check, $end_char);
+
+		if($start_p !== false && $end_p !== false) {
+
+			$deletion = substr($title_check, $start_p, ($end_p + strlen($end_char)) - $start_p);
+
+			$title_check = str_replace($deletion, '', $title_check);
+
+		}
+		else {
+			break;
+		}
+
+	}
+	
+	return $title_check;
 	
 });
