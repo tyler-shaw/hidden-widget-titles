@@ -13,31 +13,34 @@ On your widget title, add ! as the first character to hide the title from the fr
 ! My Hidden Title
 ```
 
-Alternatively, you may hide portions of a title using square brackets.
+Alternatively, you may hide any number of pieces of a title using square brackets.
 
 ```
-This Is Visible and [this is hidden]
+This is Visible and [This is Hidden]
 ```
 
 In addition, these symbols may be modified using their respective filters.
 
 Hide Entire Title Character:
 ```php
-add_filter('hwt_section_start_character', function() {
-	return '[';
+add_filter('hwt_single_start_character', function() {
+	// Simply return the new character here.
+	return '!';
 });
 ```
 
 Hide Section Starting Character:
 ```php
-add_filter('hwt_single_start_character', function() {
-	return '!';
+add_filter('hwt_section_start_character', function() {
+	// Simply return the new character here.
+	return '[';
 });
 ```
 
 Hide Section Ending Character:
 ```php
 add_filter('hwt_section_end_character', function() {
+	// Simply return the new character here.
 	return ']';
 });
 ```
