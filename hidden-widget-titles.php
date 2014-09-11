@@ -3,10 +3,11 @@
  * Plugin Name: Hidden Widget Titles
  * Description: Allows select widget titles to display in the admin panel but not on your site.
  * Version: 1.0.0
+ * Date: 10 September 2014
  * Author: Tyler Shaw
- */
+**/
 
-add_filter('widget_title', function($title) {
+function hwt_process_title($title) {
 
 	// Remove entire title if the appropriate character is present.
 	$single_start_character = apply_filters('hwt_single_start_character', '!');
@@ -36,4 +37,6 @@ add_filter('widget_title', function($title) {
 	}
 	
 	return $title;
-});
+}
+
+add_filter('widget_title', 'hwt_process_title');
