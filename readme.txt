@@ -3,7 +3,7 @@ Contributors: TylerShaw
 Tags: hide, remove, widget, widget title, usability, organization
 Requires at least: 3.5
 Tested up to: 4.0
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 
 Allows widget titles to be hidden from display on the front of the website.
 
@@ -54,6 +54,11 @@ A. Yes, you can change the character to hiding the whole title, and also the sta
 
 
 == Changelog ==
+
+v1.0.1
+
+- Added forgotten Date comment in main file.
+- Replaced main filters anonymous function with the named function hwt_process_title().
 
 v1.0.0
 

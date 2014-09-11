@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Hidden Widget Titles
  * Description: Allows select widget titles to display in the admin panel but not on your site.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Date: 10 September 2014
  * Author: Tyler Shaw
 **/
