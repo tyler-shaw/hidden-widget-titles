@@ -3,7 +3,7 @@ Contributors: TylerShaw
 Tags: hide, remove, widget, widget title, usability, organization
 Requires at least: 3.5
 Tested up to: 4.0
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 
 Allows widget titles to be hidden from display on the front of the website.
 
