@@ -12,7 +12,7 @@ function hwt_process_title($title) {
 	// Remove entire title if the appropriate character is present.
 	$single_start_character = apply_filters('hwt_single_start_character', '!');
 	
-	if($title[0] == $single_start_character) {
+	if(empty($title) || $title[0] == $single_start_character) {
 		return '';
 	}
 	
